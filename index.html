@@ -614,26 +614,16 @@
 
   <div class="section" style="padding-bottom:3rem;">
 
-    <div class="botanical" style="top:5px; right:0px;" id="b1">
-      <svg width="125" height="210" viewBox="0 0 125 210" fill="none">
-        <path d="M62 200 Q59 168 48 142 Q32 106 38 66 Q43 38 62 22" stroke="#6e8060" stroke-width="1.4" fill="none"/>
-        <path d="M48 142 Q25 134 15 113 Q8 94 22 80" stroke="#6e8060" stroke-width="1.1" fill="none"/>
-        <path d="M53 166 Q29 160 19 143 Q13 126 27 114" stroke="#7a8c6e" stroke-width="1" fill="none"/>
-        <path d="M58 106 Q81 98 88 77 Q93 57 80 44" stroke="#6e8060" stroke-width="1.1" fill="none"/>
-        <path d="M60 126 Q84 118 92 98 Q97 78 85 64" stroke="#7a8c6e" stroke-width="1" fill="none"/>
-        <path d="M61 74 Q51 54 55 34 Q59 16 72 6"  stroke="#9aae8c" stroke-width="0.9" fill="none"/>
-        <path d="M66 48 Q82 38 89 22 Q94 8 83 0"   stroke="#9aae8c" stroke-width="0.8" fill="none"/>
+<div class="section" style="padding-bottom:3rem;">
+
+    <div class="botanical" style="position: relative; margin: 0 auto 1.5rem; width: 60px; height: 60px; display: block;" id="b_heart">
+      <svg width="60" height="60" viewBox="0 0 24 24" fill="none">
+        <path d="M12 21 C12 21 3 13 3 8.5 C3 5.5 5.5 3 8.5 3 C10.5 3 11.5 4.5 12 5.5" stroke="#6e8060" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+        <path d="M12 21 C12 21 21 13 21 8.5 C21 5.5 18.5 3 15.5 3 C13.5 3 12.5 4.5 12 5.5" stroke="#6e8060" stroke-width="1.2" stroke-linecap="round" fill="none"/>
       </svg>
     </div>
-    <div class="botanical" style="bottom:-15px; left:-8px; transform:scaleX(-1);" id="b2">
-      <svg width="105" height="165" viewBox="0 0 105 165" fill="none">
-        <path d="M52 155 Q50 124 40 101 Q27 70 33 40 Q37 17 52 4" stroke="#7a8c6e" stroke-width="1.2" fill="none"/>
-        <path d="M40 101 Q19 94 11 74 Q5 57 17 45"  stroke="#6e8060" stroke-width="1"   fill="none"/>
-        <path d="M45 123 Q22 117 14 100 Q8 84 22 72" stroke="#7a8c6e" stroke-width="1"   fill="none"/>
-        <path d="M50 72  Q69 64 75 44 Q79 27 67 17"  stroke="#9aae8c" stroke-width="0.9" fill="none"/>
-        <path d="M51 48  Q67 40 71 25 Q74 11 63 5"   stroke="#9aae8c" stroke-width="0.8" fill="none"/>
-      </svg>
-    </div>
+
+    <h1 class="hero-title fade-up">CARMEN & MANUEL</h1>
 
     <h1 class="hero-title fade-up">Carmen & Manuel</h1>
     <div class="hero-date-row fade-up d1">
@@ -917,7 +907,7 @@
         }
       });
     }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.botanical').forEach(el => botObs.observe(el));
+    document.querySelectorAll('.botanical, #b_heart').forEach(el => botObs.observe(el));
   }
 
   /* ── COUNTDOWN ── */
