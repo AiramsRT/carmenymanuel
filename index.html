@@ -529,7 +529,7 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: contain; /* Ajuste horizontal perfecto */
     }
 
     #read-btn-wrap {
@@ -541,6 +541,10 @@
       display: flex;
       justify-content: center;
       background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+      
+      /* Inicia oculto para revelarse al finalizar el vídeo */
+      opacity: 0;
+      transition: opacity 0.8s ease;
     }
 
     #read-btn-wrap .btn-solid {
@@ -579,12 +583,11 @@
 </head>
 <body>
 
-<!-- ========== COVER SCREEN ========== -->
 <div id="cover-screen" onclick="openCover()">
   <div class="cover-inner">
     <div class="cover-names">
       <span>Carmen</span>
-      <span class="cover-amp">&amp;</span>
+      <span class="cover-amp">&</span>
       <span>Manuel</span>
     </div>
     <div class="cover-tagline">TENEMOS UNA NOTICIA...</div>
@@ -593,9 +596,8 @@
   </div>
 </div>
 
-<!-- ========== VIDEO SCREEN ========== -->
 <div id="video-screen">
-  <video id="intro-video" src="video1.mp4" playsinline
+  <video id="intro-video" src="video1.mp4" playsinline muted
          style="width:100%;display:block;flex:1;object-fit:contain;min-height:0;">
   </video>
   <div id="read-btn-wrap">
@@ -606,11 +608,9 @@
   </div>
 </div>
 
-<!-- ========== MAIN INVITATION ========== -->
 <div id="main">
 <div class="page-wrap">
 
-  <!-- 1. HERO -->
   <div class="section" style="padding-bottom:3rem;">
 
     <div class="botanical" style="top:-15px; right:-12px;" id="b1">
@@ -634,7 +634,7 @@
       </svg>
     </div>
 
-    <h1 class="hero-title fade-up">CARMEN &amp; MANUEL</h1>
+    <h1 class="hero-title fade-up">CARMEN & MANUEL</h1>
     <div class="hero-date-row fade-up d1">
       <span class="date-weekday">VIERNES</span>
       <span class="date-day">9</span>
@@ -646,11 +646,9 @@
     <p class="italic-sub fade-up d2">¡Nos casamos!</p>
   </div>
 
-  <!-- FOTO 1 -->
   <img src="foto1.jpg" alt="Carmen y Manuel"
        style="width:100%;display:block;height:100%;object-fit:cover;">
 
-  <!-- 2. NOSOTROS -->
   <div class="section">
     <div class="botanical" style="top:10px; right:-10px;" id="b3">
       <svg width="105" height="170" viewBox="0 0 105 170" fill="none">
@@ -671,7 +669,6 @@
     </p>
   </div>
 
-  <!-- 3. CEREMONIA -->
   <div class="section" style="background:rgba(255,255,255,0.32);">
     <div class="botanical" style="top:0; left:-10px;" id="b4">
       <svg width="95" height="150" viewBox="0 0 95 150" fill="none">
@@ -686,7 +683,7 @@
       <rect x="34" y="4" width="43" height="43" rx="2" transform="rotate(45 34 34)" stroke="#6e8060" stroke-width="1.2"/>
       <rect x="34" y="9" width="35" height="35" rx="1" transform="rotate(45 34 34)" stroke="#9aae8c" stroke-width="0.5"/>
       <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle"
-            font-family="Cormorant Garamond,serif" font-size="16" fill="#6e8060" font-style="italic">C&amp;M</text>
+            font-family="Cormorant Garamond,serif" font-size="16" fill="#6e8060" font-style="italic">C&M</text>
     </svg>
     <span class="sec-label fade-up d1">Ceremonia</span>
     <div class="sec-divider"></div>
@@ -695,7 +692,6 @@
     <a class="btn-outline fade-up d4" href="https://maps.app.goo.gl/EKGAy5n1sbnhCRKh9" target="_blank">📍 Ver mapa</a>
   </div>
 
-  <!-- 4. ITINERARIO — solo Ceremonia y Banquete -->
   <div class="section">
     <svg class="bg-leaf" viewBox="0 0 200 440" fill="none">
       <path d="M100 430 Q88 355 65 285 Q35 195 52 105 Q67 30 100 5 Q133 30 148 105 Q165 195 135 285 Q112 355 100 430Z" stroke="#6e8060" stroke-width="1.2" fill="none"/>
@@ -707,7 +703,6 @@
     <span class="sec-label fade-up">Itinerario</span>
     <div class="sec-divider"></div>
     <div class="timeline">
-      <!-- CEREMONIA -->
       <div class="tl-item fade-up">
         <svg class="tl-icon" viewBox="0 0 75 75" fill="none" stroke="#3d5a45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <rect x="15" y="30" width="45" height="37" rx="1"/>
@@ -720,7 +715,6 @@
         </svg>
         <div class="tl-text">20:00 h · Ceremonia</div>
       </div>
-      <!-- BANQUETE -->
       <div class="tl-item fade-up d2">
         <svg class="tl-icon" viewBox="0 0 75 75" fill="none" stroke="#3d5a45" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="37.5" cy="39" r="24"/>
@@ -735,7 +729,6 @@
     </div>
   </div>
 
-  <!-- 5. CELEBRACIÓN -->
   <div class="section" style="background:rgba(255,255,255,0.32);">
     <div class="botanical" style="bottom:0; right:-10px;" id="b5">
       <svg width="105" height="158" viewBox="0 0 105 158" fill="none">
@@ -750,7 +743,7 @@
       <rect x="34" y="4" width="43" height="43" rx="2" transform="rotate(45 34 34)" stroke="#6e8060" stroke-width="1.2"/>
       <rect x="34" y="9" width="35" height="35" rx="1" transform="rotate(45 34 34)" stroke="#9aae8c" stroke-width="0.5"/>
       <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle"
-            font-family="Cormorant Garamond,serif" font-size="16" fill="#6e8060" font-style="italic">C&amp;M</text>
+            font-family="Cormorant Garamond,serif" font-size="16" fill="#6e8060" font-style="italic">C&M</text>
     </svg>
     <span class="sec-label fade-up d1">Celebración</span>
     <div class="sec-divider"></div>
@@ -759,7 +752,6 @@
     <a class="btn-outline fade-up d4" href="https://maps.app.goo.gl/GXUN8iuBj69fnQm46" target="_blank">📍 Ver mapa</a>
   </div>
 
-  <!-- 6. ÁLBUM -->
   <div class="section">
     <div class="botanical" style="top:0; right:-8px;" id="b6">
       <svg width="92" height="135" viewBox="0 0 92 135" fill="none">
@@ -781,7 +773,6 @@
     <a class="btn-outline fade-up d2" href="https://photos.app.goo.gl/hGYsy4fqqAZyKjAa8" target="_blank">📷 Ver álbum</a>
   </div>
 
-  <!-- 7. REGALO -->
   <div class="section" style="background:rgba(255,255,255,0.32);">
     <span class="sec-label fade-up">Regalo</span>
     <div class="sec-divider"></div>
@@ -795,11 +786,9 @@
     </div>
   </div>
 
-  <!-- FOTO 2 -->
   <img src="foto2.jpg" alt="Carmen y Manuel"
        style="width:100%;display:block;height:100%;object-fit:cover;">
 
-  <!-- 8. ASISTENCIA — al final -->
   <div class="section">
     <div class="botanical" style="top:10px; left:-8px;" id="b7">
       <svg width="92" height="138" viewBox="0 0 92 138" fill="none">
@@ -820,12 +809,11 @@
     <div class="vline"></div>
     <a class="btn-solid fade-up d2"
        href="https://wa.me/34648730717?text=¡Hola! Confirmo mi asistencia a vuestra boda ❤️"
-       target="_blank">✉&nbsp; Confirmar asistencia</a>
+       target="_blank">✉  Confirmar asistencia</a>
   </div>
 
-  <!-- FOOTER -->
   <footer>
-    <h2 class="hero-title" style="margin-bottom:0.4rem;">CARMEN &amp; MANUEL</h2>
+    <h2 class="hero-title" style="margin-bottom:0.4rem;">CARMEN & MANUEL</h2>
     <p class="italic-sub">Les esperamos en...</p>
     <div class="countdown">
       <div class="cd-item">
@@ -850,17 +838,14 @@
     </div>
   </footer>
 
-</div><!-- /.page-wrap -->
-</div><!-- /#main -->
-
-<audio id="bg-music" loop preload="none">
+</div></div><audio id="bg-music" loop preload="none">
   <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
 <div class="toast" id="toast">✓ Número copiado</div>
 
 <script>
-  /* ── 1. COVER → VIDEO SCREEN ── */
+/* ── 1. COVER → VIDEO SCREEN ── */
   function openCover() {
     const screen = document.getElementById('cover-screen');
     screen.classList.add('hiding');
@@ -870,7 +855,23 @@
       const vs = document.getElementById('video-screen');
       vs.style.display = 'flex';
       const vid = document.getElementById('intro-video');
-      vid.play().catch(() => {});
+      
+      // Escuchar cuando el video termina para mostrar el botón
+      vid.addEventListener('ended', () => {
+        const btnWrap = document.getElementById('read-btn-wrap');
+        btnWrap.style.opacity = '1';
+      });
+
+      // ¡AQUÍ ESTÁ EL TRUCO! 
+      // Como esto ocurre justo después del clic del usuario, el navegador sí nos deja activar el sonido.
+      vid.muted = false; 
+
+      vid.play().catch(() => {
+        // Si por alguna razón un móvil muy estricto lo bloquea con sonido, 
+        // esto hace que al menos se reproduzca en silencio en lugar de romperse.
+        vid.muted = true;
+        vid.play().catch(() => {});
+      });
     }, 900);
   }
 
